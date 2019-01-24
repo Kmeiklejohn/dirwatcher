@@ -63,18 +63,18 @@ def raise_exit_flag():
     global exit_flag
     exit_flag = True
 
+
 def reading_files(args):
     """This reads in a file and stores in a string"""
     list_text = []
     path = glob.glob(f'{args.path}/*')
-    for filename in path:        
+    for filename in path:
         with open(filename, 'r') as file:
             lines = file.readlines()
             list_text.append(lines)
-            
+
     return list_text, filename
-       
-    
+
 
 def magic_text(args):
     """This function searches a file for a magic string"""
@@ -153,9 +153,7 @@ def main(args):
     logger.warning('\n----------------------------\n'
                    'Shutting Down.....\n'
                    '----------------------------')
-    # final exit point happens here
-    # Log a message that we are shutting down
-    # Include the overall uptime since program start.
+
     last_time = datetime.datetime.now()
     uptime = last_time - first_time
     print("Uptime was", uptime)
