@@ -1,4 +1,4 @@
-#! /usr/bin/env/python3
+#!/usr/bin/env python3
 """
 Dir watcher this will contain a long running program
 """
@@ -44,6 +44,7 @@ def create_parser():
         '-p',
         '--path',
         type=str,
+        default="magic",
         nargs='?',
         help='enter a file path'
     )
@@ -51,7 +52,7 @@ def create_parser():
         '-m',
         '--magic',
         nargs='?',
-        default=None,
+        default="magic",
         help="a string to watch"
     )
 
